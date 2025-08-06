@@ -59,6 +59,7 @@ reset={
 2d_render/layer_1="world"
 2d_render/layer_2="player"
 2d_render/layer_3="deathzone"
+2d_render/layer_4="trap"
 
 [rendering]
 
