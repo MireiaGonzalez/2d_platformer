@@ -140,7 +140,7 @@ script = ExtResource("1_u80x2")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_twuju")
 autoplay = "default"
-frame_progress = 0.588921
+frame_progress = 0.482343
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(11, -4)

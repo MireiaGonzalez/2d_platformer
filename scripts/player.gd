@@ -6,16 +6,21 @@ class_name Player extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var active: bool = true
+
 func _physics_process(delta: float) -> void:
+	var direction = 0
+	
 	if !is_on_floor():
 		velocity.y += gravity * delta
 		if velocity.y > 500:
 			velocity.y = 500
-	
-	if Input.is_action_just_pressed("jump"): #&& is_on_floor():
-		jump(jump_force)
-	
-	var direction = Input.get_axis("move_left", "move_right")
+	if active:
+		if Input.is_action_just_pressed("jump"): #&& is_on_floor():
+			jump(jump_force)
+			
+		direction = Input.get_axis("move_left", "move_right")
+		
 	if direction != 0:
 		animated_sprite.flip_h = (direction == -1)
 	
