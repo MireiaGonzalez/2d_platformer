@@ -1,15 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4e0sl8603bnm"]
+[gd_scene load_steps=8 format=4 uid="uid://b4e0sl8603bnm"]
 
 [ext_resource type="Script" uid="uid://dtsqh7d488kv1" path="res://scripts/level.gd" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://bstqw0kt0erpt" path="res://scenes/player.tscn" id="2_w7c3h"]
-[ext_resource type="Texture2D" uid="uid://0fqn7y4qsfcw" path="res://icon.svg" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://dadu2cgc4m04b" path="res://scenes/jump_pad.tscn" id="4_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://3ofdnu23hfys" path="res://scenes/saw.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://bvf7kgv5dt6di" path="res://scenes/spike_ball.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://c8gdtsqu8qhgp" path="res://scenes/terrain_tile_map_layer.tscn" id="7_klq6b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
-size = Vector2(552, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
 size = Vector2(1454, 23)
@@ -18,20 +14,7 @@ size = Vector2(1454, 23)
 script = ExtResource("1_2q6dc")
 
 [node name="Player" parent="." instance=ExtResource("2_w7c3h")]
-position = Vector2(328, 171)
-
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(-128, 248)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(266.5, 0.500002)
-scale = Vector2(4.30469, 0.164062)
-texture = ExtResource("3_w8frs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(266, 0)
-shape = SubResource("RectangleShape2D_mx8sn")
+position = Vector2(296, 166)
 
 [node name="Deathzone" type="Area2D" parent="."]
 collision_layer = 4
@@ -42,9 +25,10 @@ position = Vector2(320, 314)
 shape = SubResource("RectangleShape2D_w8frs")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(329, 188)
+position = Vector2(350, 152)
 
 [node name="Objects" type="Node2D" parent="."]
+position = Vector2(33, -21)
 
 [node name="JumpPad" parent="Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(167, 224)
@@ -54,6 +38,7 @@ position = Vector2(132, 225)
 jump_force = 350
 
 [node name="Traps" type="Node2D" parent="."]
+position = Vector2(79, -23)
 
 [node name="Saw" parent="Traps" instance=ExtResource("5_ppgk2")]
 position = Vector2(0, 225)
@@ -62,5 +47,7 @@ position = Vector2(0, 225)
 position = Vector2(403, 221)
 
 [node name="TerrainTileMapLayer" parent="." instance=ExtResource("7_klq6b")]
+position = Vector2(47, -7)
+tile_map_data = PackedByteArray("AAAFAA4AAAAHAAAAAAAFAA8AAAAHAAEAAAAFABAAAAAHAAIAAAAGABAAAAAHAAIAAAAGAA8AAAAHAAEAAAAGAA4AAAAHAAAAAAAHAA4AAAAHAAAAAAAHAA8AAAAHAAEAAAAHABAAAAAHAAIAAAAIABAAAAAHAAIAAAAIAA8AAAAHAAEAAAAIAA4AAAAHAAAAAAAJAA4AAAAHAAAAAAAJAA8AAAAHAAEAAAAJABAAAAAHAAIAAAAKAA8AAAAHAAEAAAAKAA4AAAAHAAAAAAALAA4AAAAHAAAAAAALAA8AAAAHAAEAAAALABAAAAAHAAIAAAAKABAAAAAHAAIAAAAMAA4AAAAHAAAAAAANAA4AAAAHAAAAAAAOAA4AAAAHAAAAAAAPAA4AAAAHAAAAAAAQAA4AAAAHAAAAAAARAA4AAAAHAAAAAAASAA4AAAAHAAAAAAATAA4AAAAHAAAAAAAUAA4AAAAHAAAAAAAVAA4AAAAHAAAAAAAWAA4AAAAHAAAAAAAXAA4AAAAHAAAAAAAYAA4AAAAHAAAAAAAZAA4AAAAHAAAAAAAaAA4AAAAHAAAAAAAbAA4AAAAHAAAAAAAcAA4AAAAHAAAAAAAdAA4AAAAHAAAAAAAeAA4AAAAHAAAAAAAfAA8AAAAHAAEAAAAfABAAAAAHAAIAAAAeABAAAAAHAAIAAAAdABAAAAAHAAIAAAAcABAAAAAHAAIAAAAbABAAAAAHAAIAAAAaABAAAAAHAAIAAAAZABAAAAAHAAIAAAAYABAAAAAHAAIAAAAXABAAAAAHAAIAAAAWABAAAAAHAAIAAAAVABAAAAAHAAIAAAAUABAAAAAHAAIAAAATABAAAAAHAAIAAAASABAAAAAHAAIAAAARABAAAAAHAAIAAAAQABAAAAAHAAIAAAAPABAAAAAHAAIAAAAOABAAAAAHAAIAAAANABAAAAAHAAIAAAAMABAAAAAHAAIAAAAMAA8AAAAHAAEAAAANAA8AAAAHAAEAAAAOAA8AAAAHAAEAAAAPAA8AAAAHAAEAAAAQAA8AAAAHAAEAAAARAA8AAAAHAAEAAAASAA8AAAAHAAEAAAATAA8AAAAHAAEAAAAUAA8AAAAHAAEAAAAVAA8AAAAHAAEAAAAWAA8AAAAHAAEAAAAXAA8AAAAHAAEAAAAYAA8AAAAHAAEAAAAZAA8AAAAHAAEAAAAaAA8AAAAHAAEAAAAbAA8AAAAHAAEAAAAcAA8AAAAHAAEAAAAdAA8AAAAHAAEAAAAeAA8AAAAHAAEAAAAfAA4AAAAHAAAAAAAlABAAAAAIAAIAAAAlAA8AAAAIAAEAAAAlAA4AAAAIAAAAAAAkABAAAAAHAAIAAAAkAA8AAAAHAAEAAAAkAA4AAAAHAAAAAAAjABAAAAAHAAIAAAAjAA8AAAAHAAEAAAAjAA4AAAAHAAAAAAAiABAAAAAHAAIAAAAiAA8AAAAHAAEAAAAiAA4AAAAHAAAAAAAhABAAAAAHAAIAAAAhAA8AAAAHAAEAAAAhAA4AAAAHAAAAAAAgABAAAAAHAAIAAAAgAA8AAAAHAAEAAAAgAA4AAAAHAAAAAAAEABAAAAAHAAIAAAAEAA8AAAAHAAEAAAAEAA4AAAAHAAAAAAADABAAAAAHAAIAAAADAA8AAAAHAAEAAAADAA4AAAAHAAAAAAACABAAAAAHAAIAAAACAA8AAAAHAAEAAAACAA4AAAAHAAAAAAABABAAAAAHAAIAAAABAA8AAAAHAAEAAAABAA4AAAAHAAAAAAAAABAAAAAHAAIAAAAAAA8AAAAHAAEAAAAAAA4AAAAHAAAAAAD//xAAAAAHAAIAAAD//w8AAAAHAAEAAAD//w4AAAAHAAAAAAD+/xAAAAAHAAIAAAD+/w8AAAAHAAEAAAD+/w4AAAAHAAAAAAD9/xAAAAAGAAIAAAD9/w8AAAAGAAEAAAD9/w4AAAAGAAAAAAATAAwAAAARAAEAAAAUAAwAAAASAAEAAAAVAAwAAAATAAEAAAAXAAoAAAARAAEAAAAYAAoAAAASAAEAAAAZAAoAAAATAAEAAAA=")
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
