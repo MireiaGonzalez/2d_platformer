@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4e0sl8603bnm"]
+[gd_scene load_steps=10 format=3 uid="uid://b4e0sl8603bnm"]
 
 [ext_resource type="Script" uid="uid://dtsqh7d488kv1" path="res://scripts/level.gd" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://bstqw0kt0erpt" path="res://scenes/player.tscn" id="2_w7c3h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dadu2cgc4m04b" path="res://scenes/jump_pad.tscn" id="4_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://3ofdnu23hfys" path="res://scenes/saw.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://bvf7kgv5dt6di" path="res://scenes/spike_ball.tscn" id="6_2r41h"]
+[ext_resource type="PackedScene" uid="uid://c8gdtsqu8qhgp" path="res://scenes/terrain_tile_map_layer.tscn" id="7_klq6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
 size = Vector2(552, 20)
@@ -59,5 +60,7 @@ position = Vector2(0, 225)
 
 [node name="SpikeBall" parent="Traps" instance=ExtResource("6_2r41h")]
 position = Vector2(403, 221)
+
+[node name="TerrainTileMapLayer" parent="." instance=ExtResource("7_klq6b")]
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
