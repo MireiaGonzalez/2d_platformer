@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://hdyjo8y48i7p"]
+
+[ext_resource type="Texture2D" uid="uid://bg0ax48kj4fby" path="res://assets/textures/bg/Blue.png" id="1_anprf"]
+[ext_resource type="Script" uid="uid://b86343xl3clwc" path="res://scripts/bg.gd" id="1_dpp0m"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_dpp0m")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(640, 640)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_anprf")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 640)
