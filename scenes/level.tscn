@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://b4e0sl8603bnm"]
+[gd_scene load_steps=13 format=4 uid="uid://b4e0sl8603bnm"]
 
 [ext_resource type="Script" uid="uid://dtsqh7d488kv1" path="res://scripts/level.gd" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://hdyjo8y48i7p" path="res://scenes/bg.tscn" id="2_klq6b"]
 [ext_resource type="PackedScene" uid="uid://db6vhgd8dpjbi" path="res://scenes/level_2.tscn" id="2_olg7q"]
 [ext_resource type="PackedScene" uid="uid://bstqw0kt0erpt" path="res://scenes/player.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://cmm0ac54037lu" path="res://scenes/ui_layer.tscn" id="4_8iemx"]
 [ext_resource type="PackedScene" uid="uid://dadu2cgc4m04b" path="res://scenes/jump_pad.tscn" id="4_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d0f12hymsto0x" path="res://scenes/deathzone.tscn" id="4_t1rx8"]
 [ext_resource type="PackedScene" uid="uid://3ofdnu23hfys" path="res://scenes/saw.tscn" id="5_ppgk2"]
@@ -17,6 +18,8 @@ script = ExtResource("1_2q6dc")
 next_level = ExtResource("2_olg7q")
 
 [node name="BG" parent="." instance=ExtResource("2_klq6b")]
+
+[node name="UILayer" parent="." instance=ExtResource("4_8iemx")]
 
 [node name="TerrainTileMapLayer" parent="." instance=ExtResource("7_klq6b")]
 position = Vector2(47, -7)

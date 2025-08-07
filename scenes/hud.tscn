@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1w5a0w0p25u0"]
+
+[ext_resource type="Script" uid="uid://etm12yuoa6ui" path="res://scripts/hud.gd" id="1_oo0fn"]
+[ext_resource type="FontFile" uid="uid://bx5jvm8w20b1w" path="res://assets/fonts/Kenney Pixel Square.ttf" id="2_5ysmq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
+font = ExtResource("2_5ysmq")
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oo0fn")
+
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "9999"
+label_settings = SubResource("LabelSettings_6fi6k")

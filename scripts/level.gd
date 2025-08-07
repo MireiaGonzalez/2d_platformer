@@ -6,6 +6,7 @@ extends Node2D
 @onready var start: StartSpawn = $Start
 @onready var exit = $Exit
 @onready var death_zone = $Deathzone
+@onready var hud = $UILayer/HUD
 
 var player: Player = null
 var timer_node: Timer = null
@@ -25,6 +26,7 @@ func _ready() -> void:
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
 	
 	time_left = level_time
+	hud.set_time_label(time_left)
 	
 	timer_node = Timer.new()
 	timer_node.name = "Level Timer"
@@ -39,6 +41,7 @@ func _on_level_timer_timeout() -> void:
 		if time_left < 0:
 			reset_player()
 			time_left = level_time
+		hud.set_time_label(time_left)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
@@ -46,7 +49,7 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 
-func _on_deathzone_body_entered(body: Node2D) -> void:
+func _on_deathzone_body_entered(_body: Node2D) -> void:
 	reset_player()
 
 func _on_trap_touched_player() -> void:
