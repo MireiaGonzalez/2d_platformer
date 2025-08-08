@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ysmex1ect7g" path="res://assets/textures/bg/Pink.png" id="2_hhfj6"]
 [ext_resource type="PackedScene" uid="uid://ddfnlc3ub4p1f" path="res://scenes/start.tscn" id="2_p6vls"]
 [ext_resource type="PackedScene" uid="uid://8k45ymk6na6i" path="res://scenes/exit.tscn" id="3_hhfj6"]
-[ext_resource type="PackedScene" uid="uid://cmm0ac54037lu" path="res://scenes/ui_layer.tscn" id="4_ha73p"]
+[ext_resource type="PackedScene" uid="uid://cmm0ac54037lu" path="res://scenes/ui/ui_layer.tscn" id="4_ha73p"]
 [ext_resource type="PackedScene" uid="uid://d0f12hymsto0x" path="res://scenes/deathzone.tscn" id="4_wae8j"]
 [ext_resource type="PackedScene" uid="uid://bstqw0kt0erpt" path="res://scenes/player.tscn" id="5_ha73p"]
 [ext_resource type="PackedScene" uid="uid://c8gdtsqu8qhgp" path="res://scenes/terrain_tile_map_layer.tscn" id="6_p6vls"]
