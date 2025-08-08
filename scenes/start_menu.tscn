@@ -1,0 +1,172 @@
+[gd_scene load_steps=20 format=4 uid="uid://tjq1vnavb7mt"]
+
+[ext_resource type="FontFile" uid="uid://bx5jvm8w20b1w" path="res://assets/fonts/Kenney Pixel Square.ttf" id="1_m7x51"]
+[ext_resource type="Script" uid="uid://ch5iig5vosqg4" path="res://scripts/start_menu.gd" id="2_fcv5n"]
+[ext_resource type="PackedScene" uid="uid://hdyjo8y48i7p" path="res://scenes/bg.tscn" id="2_h61rw"]
+[ext_resource type="PackedScene" uid="uid://c8gdtsqu8qhgp" path="res://scenes/terrain_tile_map_layer.tscn" id="5_fcv5n"]
+[ext_resource type="Texture2D" uid="uid://bfjw0nmgdsmcl" path="res://assets/textures/player/Idle (32x32).png" id="6_4v6gu"]
+
+[sub_resource type="Theme" id="Theme_4v6gu"]
+default_font = ExtResource("1_m7x51")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nxjfj"]
+font_size = 42
+font_color = Color(0.2116, 0.49496, 0.92, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.698039)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxjfj"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4qax"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5byqq"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e58y3"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apowk"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnuwp"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egh8s"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1kog"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruo1u"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqu1h"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0oe1"]
+atlas = ExtResource("6_4v6gu")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trkcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxjfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4qax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5byqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e58y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apowk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnuwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egh8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1kog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruo1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqu1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0oe1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4v6gu")
+script = ExtResource("2_fcv5n")
+
+[node name="BG" parent="." instance=ExtResource("2_h61rw")]
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 22.0
+offset_right = 176.0
+offset_bottom = 86.0
+grow_horizontal = 2
+text = "Martial Mike"
+label_settings = SubResource("LabelSettings_nxjfj")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -7.0
+offset_right = 83.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = 64.0
+offset_right = 38.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "QUIT"
+
+[node name="TerrainTileMapLayer" parent="." instance=ExtResource("5_fcv5n")]
+tile_map_data = PackedByteArray("AAAKABAAAAAIAAIAAAAKAA8AAAAIAAAAAAAJABAAAAAHAAIAAAAJAA8AAAAJAAEAAAAJAA4AAAAIAAEAAAAIABAAAAAHAAIAAAAIAA8AAAAHAAEAAAAIAA4AAAAHAAEAAAAHABAAAAAHAAIAAAAHAA8AAAAHAAEAAAAHAA4AAAAHAAEAAAAGABAAAAAHAAIAAAAGAA8AAAAHAAEAAAAGAA4AAAAHAAEAAAAFABAAAAAHAAIAAAAFAA8AAAAHAAEAAAAFAA4AAAAHAAEAAAAEABAAAAAHAAIAAAAEAA8AAAAHAAEAAAAEAA4AAAAHAAEAAAADABAAAAAHAAIAAAADAA8AAAAHAAEAAAADAA4AAAAKAAEAAAACABAAAAAHAAIAAAACAA8AAAAKAAEAAAACAA4AAAAGAAAAAAABABAAAAAHAAIAAAABAA8AAAAHAAAAAAAAABAAAAAGAAIAAAAAAA8AAAAGAAAAAAAGAA0AAAAJAAEAAAAGAAwAAAAIAAAAAAAFAA0AAAAHAAEAAAAFAAwAAAAHAAAAAAAEAA0AAAAKAAEAAAAEAAwAAAAGAAAAAAAHAA0AAAAHAAAAAAAIAA0AAAAHAAAAAAAJAA0AAAAIAAAAAAADAA0AAAAGAAAAAAAbAA4AAAAAAAAAAAAbAA8AAAAAAAEAAAAbABAAAAAAAAIAAAAcAA4AAAABAAAAAAAcAA8AAAABAAEAAAAcABAAAAABAAIAAAAdAA4AAAACAAAAAAAdAA8AAAACAAEAAAAdABAAAAACAAIAAAAOAA8AAAAHAAQAAAAOABAAAAAHAAUAAAAPAA8AAAAHAAQAAAAPABAAAAAHAAUAAAAQAA8AAAAHAAQAAAAQABAAAAAHAAUAAAANAA8AAAAGAAQAAAANABAAAAAGAAUAAAARAA8AAAAIAAQAAAARABAAAAAIAAUAAAASABAAAAAJAAUAAAATABAAAAAIAAQAAAASAA8AAAAIAAQAAAAVAA0AAAAMAAAAAAAWAA0AAAANAAAAAAAXAA0AAAAOAAAAAAAGAAoAAAARAAAAAAAHAAoAAAASAAAAAAAIAAoAAAATAAAAAAAKAAcAAAARAAAAAAALAAcAAAASAAAAAAAMAAcAAAATAAAAAAAaAAsAAAASAAQAAAAaAAwAAAASAAUAAAAaAA0AAAASAAYAAAAaAA4AAAASAAQAAAAaAA8AAAASAAUAAAAaABAAAAASAAYAAAAbAAsAAAASAAQAAAAbAAwAAAASAAUAAAAbAA0AAAASAAYAAAAcAAsAAAASAAQAAAAcAAwAAAASAAUAAAAcAA0AAAASAAYAAAAdAAsAAAASAAQAAAAdAAwAAAASAAUAAAAdAA0AAAASAAYAAAAeAAsAAAASAAQAAAAeAAwAAAASAAUAAAAeAA0AAAASAAYAAAAeAA4AAAASAAQAAAAeAA8AAAASAAUAAAAeABAAAAASAAYAAAAfAA4AAAASAAQAAAAfAA8AAAASAAUAAAAfABAAAAASAAYAAAAgAA4AAAATAAQAAAAgAA8AAAATAAUAAAAgABAAAAATAAYAAAAZAA4AAAARAAQAAAAZAA8AAAARAAUAAAAZABAAAAARAAYAAAAZAAsAAAARAAQAAAAZAAwAAAARAAUAAAAZAA0AAAARAAYAAAAfAAwAAAATAAQAAAAfAA0AAAATAAUAAAA=")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(118, 145)
+sprite_frames = SubResource("SpriteFrames_trkcg")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
