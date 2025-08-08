@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 500:
 			velocity.y = 500
 	if active:
-		if Input.is_action_just_pressed("jump"): #&& is_on_floor():
+		if Input.is_action_just_pressed("jump") && is_on_floor():
 			jump(jump_force)
 			
 		direction = Input.get_axis("move_left", "move_right")
@@ -42,4 +42,5 @@ func update_animations(direction: int) -> void:
 			animated_sprite.play("fall") 
 
 func jump(force: int):
+	AudioPlayer.play_sfx("jump")
 	velocity.y = -force
